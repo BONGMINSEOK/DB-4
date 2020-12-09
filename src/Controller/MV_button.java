@@ -6,7 +6,7 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
+import View.*;
 import Model.MV_DTO;
 public class MV_button implements ActionListener {
 //MV_button
@@ -31,7 +31,7 @@ public class MV_button implements ActionListener {
 			}
 		}	
 		else if(b.getText().equals("변경")) {
-			/*버튼 구현*/
+			new MV_CH_Page().MV_CH_LOAD();
 		}
 	}
 	
