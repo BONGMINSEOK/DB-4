@@ -9,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import Model.DI_DTO;
+import View.DI_CH_Page;
 
 public class DI_button implements ActionListener {
 	private JTable table;
@@ -29,7 +30,7 @@ public class DI_button implements ActionListener {
 			}
 		}	
 		else if(b.getText().equals("변경")) {
-			/*버튼 구현*/
+			new DI_CH_Page().DI_CH_LOAD();
 		}
 	}
 }

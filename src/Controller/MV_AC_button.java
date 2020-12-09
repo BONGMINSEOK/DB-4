@@ -9,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import Model.MV_AC_DTO;
+import View.MV_AC_CH_Page;
 
 
 public class MV_AC_button implements ActionListener{
@@ -30,7 +31,7 @@ public class MV_AC_button implements ActionListener{
 			}
 		}		
 		else if(b.getText().equals("변경")) {
-			/*버튼 구현*/
+			new MV_AC_CH_Page().MV_AC_CH_LOAD();
 		}
 	}
 }
