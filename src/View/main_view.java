@@ -43,11 +43,9 @@ public class main_view extends JFrame {
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
 			new String[] {
-				"\uC601\uD654\uBC88\uD638", "\uC601\uD654\uC81C\uBAA9", "\uAC1C\uBD09\uC77C", "\uC0C1\uC601 \uC2DC\uAC04", "\uD3C9\uC810", "\uC601\uD654\uC7A5\uB974"
-			}
+				"영화번호", "영화제목", "개봉일", "상영 시간", "평점", "장르"
+			},0
 		));
 		table.getColumnModel().getColumn(3).setPreferredWidth(81);
 		scrollPane.setViewportView(table);
@@ -60,7 +58,7 @@ public class main_view extends JFrame {
 		mv_change_button.setBounds(1115, 10, 68, 27);
 		contentPane.add(mv_change_button);
 		
-		mv_change_button.addActionListener(new MV_button()); //영화정보 변경 버튼 이벤트 함수
+		mv_change_button.addActionListener(new MV_button(table)); //영화정보 변경 버튼 이벤트 함수
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(15, 222, 531, 140);
@@ -84,6 +82,8 @@ public class main_view extends JFrame {
 		ac_change_button.setBounds(478, 191, 68, 27);
 		contentPane.add(ac_change_button);
 		
+		ac_change_button.addActionListener(new AC_button());
+		
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(609, 222, 574, 140);
 		contentPane.add(scrollPane_2);
@@ -105,6 +105,7 @@ public class main_view extends JFrame {
 		JButton di_change_button = new JButton("변경");
 		di_change_button.setBounds(1115, 191, 68, 27);
 		contentPane.add(di_change_button);
+		di_change_button.addActionListener(new DI_button());
 		
 		JScrollPane scrollPane_3 = new JScrollPane();
 		scrollPane_3.setBounds(15, 409, 531, 140);
@@ -127,6 +128,7 @@ public class main_view extends JFrame {
 		JButton com_change_button = new JButton("변경");
 		com_change_button.setBounds(478, 376, 68, 27);
 		contentPane.add(com_change_button);
+		com_change_button.addActionListener(new COM_button());
 		
 		JScrollPane scrollPane_4 = new JScrollPane();
 		scrollPane_4.setBounds(609, 409, 574, 140);
@@ -149,11 +151,12 @@ public class main_view extends JFrame {
 		JButton mv_ac_change_button = new JButton("변경");
 		mv_ac_change_button.setBounds(1115, 376, 68, 27);
 		contentPane.add(mv_ac_change_button);
+		mv_ac_change_button.addActionListener(new MV_AC_button());
 		
 		JScrollPane scrollPane_5 = new JScrollPane();
 		scrollPane_5.setBounds(15, 591, 531, 140);
 		contentPane.add(scrollPane_5);
-		
+		 
 		table_5 = new JTable();
 		table_5.setModel(new DefaultTableModel(
 			new Object[][] {
@@ -171,6 +174,7 @@ public class main_view extends JFrame {
 		JButton mv_di_change_button = new JButton("변경");
 		mv_di_change_button.setBounds(478, 559, 68, 27);
 		contentPane.add(mv_di_change_button);
+		mv_di_change_button.addActionListener(new MV_DI_button());
 		
 		JScrollPane scrollPane_6 = new JScrollPane();
 		scrollPane_6.setBounds(609, 591, 574, 140);
@@ -193,6 +197,7 @@ public class main_view extends JFrame {
 		JButton mv_com_change_button = new JButton("변경");
 		mv_com_change_button.setBounds(1115, 559, 68, 27);
 		contentPane.add(mv_com_change_button);
+		mv_com_change_button.addActionListener(new MV_COM_button());
 		
 		JScrollPane scrollPane_7 = new JScrollPane();
 		scrollPane_7.setBounds(15, 772, 400, 140);
@@ -263,23 +268,27 @@ public class main_view extends JFrame {
 		JButton mv_search_button = new JButton("검색");
 		mv_search_button.setBounds(15, 10, 68, 27);
 		contentPane.add(mv_search_button);
-		mv_search_button.addActionListener(new MV_button());
-		
+		mv_search_button.addActionListener(new MV_button(table));
+
 		JButton ac_search_button = new JButton("검색");
 		ac_search_button.setBounds(15, 191, 68, 27);
 		contentPane.add(ac_search_button);
+		ac_search_button.addActionListener(new AC_button());
 		
 		JButton di_search_button = new JButton("검색");
 		di_search_button.setBounds(609, 191, 68, 27);
 		contentPane.add(di_search_button);
+		di_search_button.addActionListener(new DI_button());
 		
 		JButton mv_ac_search_button = new JButton("검색");
 		mv_ac_search_button.setBounds(609, 372, 68, 27);
 		contentPane.add(mv_ac_search_button);
+		mv_ac_search_button.addActionListener(new MV_AC_button());
 		
 		JButton com_search_button = new JButton("검색");
 		com_search_button.setBounds(15, 372, 68, 27);
 		contentPane.add(com_search_button);
+		com_search_button.addActionListener(new COM_button());
 		
 		JButton btnNewButton_14 = new JButton("m");
 		btnNewButton_14.setBounds(15, 735, 68, 27);
@@ -296,9 +305,12 @@ public class main_view extends JFrame {
 		JButton mv_com_search_button = new JButton("검색");
 		mv_com_search_button.setBounds(609, 559, 68, 27);
 		contentPane.add(mv_com_search_button);
+		mv_com_search_button.addActionListener(new MV_COM_button());
 		
 		JButton mv_di_search_button = new JButton("검색");
 		mv_di_search_button.setBounds(15, 559, 68, 27);
 		contentPane.add(mv_di_search_button);
+		mv_di_search_button.addActionListener(new MV_DI_button());
+
 	}
 }
