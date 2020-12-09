@@ -1,4 +1,4 @@
-package Controll;
+package Controller;
 
 import java.awt.EventQueue;
 

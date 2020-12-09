@@ -2,6 +2,7 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,6 +12,8 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import Controller.*;
+import java.awt.event.ActionEvent;
 
 public class main_view extends JFrame {
 
@@ -53,9 +56,11 @@ public class main_view extends JFrame {
 		lblNewLabel.setBounds(536, 14, 75, 19);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton_3 = new JButton("\uBCC0\uACBD");
-		btnNewButton_3.setBounds(1068, 10, 115, 27);
-		contentPane.add(btnNewButton_3);
+		JButton mv_change_button = new JButton("변경"); // 영화정보 변경 버튼
+		mv_change_button.setBounds(1115, 10, 68, 27);
+		contentPane.add(mv_change_button);
+		
+		mv_change_button.addActionListener(new MV_button()); //영화정보 변경 버튼 이벤트 함수
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(15, 222, 531, 140);
@@ -75,9 +80,9 @@ public class main_view extends JFrame {
 		lblNewLabel_1.setBounds(243, 195, 75, 19);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("\uBCC0\uACBD");
-		btnNewButton.setBounds(431, 191, 115, 27);
-		contentPane.add(btnNewButton);
+		JButton ac_change_button = new JButton("변경");
+		ac_change_button.setBounds(478, 191, 68, 27);
+		contentPane.add(ac_change_button);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(609, 222, 574, 140);
@@ -97,9 +102,9 @@ public class main_view extends JFrame {
 		lblNewLabel_2.setBounds(846, 195, 68, 19);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnNewButton_1 = new JButton("\uBCC0\uACBD");
-		btnNewButton_1.setBounds(1068, 191, 115, 27);
-		contentPane.add(btnNewButton_1);
+		JButton di_change_button = new JButton("변경");
+		di_change_button.setBounds(1115, 191, 68, 27);
+		contentPane.add(di_change_button);
 		
 		JScrollPane scrollPane_3 = new JScrollPane();
 		scrollPane_3.setBounds(15, 409, 531, 140);
@@ -119,9 +124,9 @@ public class main_view extends JFrame {
 		lblNewLabel_3.setBounds(243, 376, 68, 19);
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btnNewButton_2 = new JButton("\uBCC0\uACBD");
-		btnNewButton_2.setBounds(431, 376, 115, 27);
-		contentPane.add(btnNewButton_2);
+		JButton com_change_button = new JButton("변경");
+		com_change_button.setBounds(478, 376, 68, 27);
+		contentPane.add(com_change_button);
 		
 		JScrollPane scrollPane_4 = new JScrollPane();
 		scrollPane_4.setBounds(609, 409, 574, 140);
@@ -141,9 +146,9 @@ public class main_view extends JFrame {
 		lblNewLabel_4.setBounds(846, 376, 103, 19);
 		contentPane.add(lblNewLabel_4);
 		
-		JButton btnNewButton_4 = new JButton("\uBCC0\uACBD");
-		btnNewButton_4.setBounds(1068, 376, 115, 27);
-		contentPane.add(btnNewButton_4);
+		JButton mv_ac_change_button = new JButton("변경");
+		mv_ac_change_button.setBounds(1115, 376, 68, 27);
+		contentPane.add(mv_ac_change_button);
 		
 		JScrollPane scrollPane_5 = new JScrollPane();
 		scrollPane_5.setBounds(15, 591, 531, 140);
@@ -163,9 +168,9 @@ public class main_view extends JFrame {
 		lblNewLabel_5.setBounds(243, 563, 68, 19);
 		contentPane.add(lblNewLabel_5);
 		
-		JButton btnNewButton_5 = new JButton("\uBCC0\uACBD");
-		btnNewButton_5.setBounds(431, 559, 115, 27);
-		contentPane.add(btnNewButton_5);
+		JButton mv_di_change_button = new JButton("변경");
+		mv_di_change_button.setBounds(478, 559, 68, 27);
+		contentPane.add(mv_di_change_button);
 		
 		JScrollPane scrollPane_6 = new JScrollPane();
 		scrollPane_6.setBounds(609, 591, 574, 140);
@@ -185,9 +190,9 @@ public class main_view extends JFrame {
 		lblNewLabel_6.setBounds(846, 558, 86, 19);
 		contentPane.add(lblNewLabel_6);
 		
-		JButton btnNewButton_6 = new JButton("\uBCC0\uACBD");
-		btnNewButton_6.setBounds(1068, 559, 115, 27);
-		contentPane.add(btnNewButton_6);
+		JButton mv_com_change_button = new JButton("변경");
+		mv_com_change_button.setBounds(1115, 559, 68, 27);
+		contentPane.add(mv_com_change_button);
 		
 		JScrollPane scrollPane_7 = new JScrollPane();
 		scrollPane_7.setBounds(15, 772, 400, 140);
@@ -207,8 +212,8 @@ public class main_view extends JFrame {
 		lblNewLabel_7.setBounds(154, 739, 68, 19);
 		contentPane.add(lblNewLabel_7);
 		
-		JButton btnNewButton_7 = new JButton("New button");
-		btnNewButton_7.setBounds(300, 735, 115, 27);
+		JButton btnNewButton_7 = new JButton("t");
+		btnNewButton_7.setBounds(347, 735, 68, 27);
 		contentPane.add(btnNewButton_7);
 		
 		JScrollPane scrollPane_8 = new JScrollPane();
@@ -229,8 +234,8 @@ public class main_view extends JFrame {
 		lblNewLabel_8.setBounds(587, 739, 68, 19);
 		contentPane.add(lblNewLabel_8);
 		
-		JButton btnNewButton_8 = new JButton("New button");
-		btnNewButton_8.setBounds(738, 735, 115, 27);
+		JButton btnNewButton_8 = new JButton("\uBCC0\uACBD");
+		btnNewButton_8.setBounds(785, 735, 68, 27);
 		contentPane.add(btnNewButton_8);
 		
 		JScrollPane scrollPane_9 = new JScrollPane();
@@ -247,12 +252,53 @@ public class main_view extends JFrame {
 		));
 		scrollPane_9.setViewportView(table_9);
 		
-		JLabel lblNewLabel_9 = new JLabel("New label");
+		JLabel lblNewLabel_9 = new JLabel("mylabel");
 		lblNewLabel_9.setBounds(983, 739, 68, 19);
 		contentPane.add(lblNewLabel_9);
 		
-		JButton btnNewButton_9 = new JButton("New button");
-		btnNewButton_9.setBounds(1068, 735, 115, 27);
+		JButton btnNewButton_9 = new JButton("y");
+		btnNewButton_9.setBounds(1115, 735, 68, 27);
 		contentPane.add(btnNewButton_9);
+		
+		JButton mv_search_button = new JButton("검색");
+		mv_search_button.setBounds(15, 10, 68, 27);
+		contentPane.add(mv_search_button);
+		mv_search_button.addActionListener(new MV_button());
+		
+		JButton ac_search_button = new JButton("검색");
+		ac_search_button.setBounds(15, 191, 68, 27);
+		contentPane.add(ac_search_button);
+		
+		JButton di_search_button = new JButton("검색");
+		di_search_button.setBounds(609, 191, 68, 27);
+		contentPane.add(di_search_button);
+		
+		JButton mv_ac_search_button = new JButton("검색");
+		mv_ac_search_button.setBounds(609, 372, 68, 27);
+		contentPane.add(mv_ac_search_button);
+		
+		JButton com_search_button = new JButton("검색");
+		com_search_button.setBounds(15, 372, 68, 27);
+		contentPane.add(com_search_button);
+		
+		JButton btnNewButton_14 = new JButton("m");
+		btnNewButton_14.setBounds(15, 735, 68, 27);
+		contentPane.add(btnNewButton_14);
+		
+		JButton btnNewButton_15 = new JButton("n");
+		btnNewButton_15.setBounds(431, 735, 68, 27);
+		contentPane.add(btnNewButton_15);
+		
+		JButton btnNewButton_16 = new JButton("v");
+		btnNewButton_16.setBounds(872, 735, 68, 27);
+		contentPane.add(btnNewButton_16);
+		
+		JButton mv_com_search_button = new JButton("검색");
+		mv_com_search_button.setBounds(609, 559, 68, 27);
+		contentPane.add(mv_com_search_button);
+		
+		JButton mv_di_search_button = new JButton("검색");
+		mv_di_search_button.setBounds(15, 559, 68, 27);
+		contentPane.add(mv_di_search_button);
 	}
 }
