@@ -5,26 +5,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
-// 1) 디비에서 데이터 읽어오기
-// 2) 데이터 수정
-// 3) 데이터 삭제
-// 4) 데이터 삽입
-
-//mv_read
-// string index
-//쿼리문
-//println 문
-public class MV_DTO {
-	public Vector<String[]> MV_READ() {
+public class AC_DTO {
+	public Vector<String[]> AC_READ() {
 		DataBaseDAO connecter = new DataBaseDAO();
 		connecter.DB_connect();
 		Vector<String[]> Data = new Vector<String[]>();
 		try {
 		Statement stmt = connecter.conn.createStatement();
-		ResultSet rset = stmt.executeQuery("select * from movie");
+		ResultSet rset = stmt.executeQuery("select * from actor");
 		while(rset.next()) {
-			String row[] = new String[6]; 
-			for(int i=1 ; i<7 ; i++) {
+			String row[] = new String[4]; 
+			for(int i=1 ; i<5 ; i++) {
 				row[i-1] = rset.getString(i);
 			}
 			Data.addElement(row);
@@ -32,8 +23,9 @@ public class MV_DTO {
 		}
 		}catch(SQLException e) {
 			e.printStackTrace();
-			System.out.println("영화 DB 읽기실패" + e.toString());
+			System.out.println("배우 DB 읽기실패" + e.toString());
 		}
 		return Data;
 	}
+
 }

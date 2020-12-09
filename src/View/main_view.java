@@ -41,12 +41,10 @@ public class main_view extends JFrame {
 		scrollPane.setBounds(15, 41, 1168, 140);
 		contentPane.add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new String[] {
-				"영화번호", "영화제목", "개봉일", "상영 시간", "평점", "장르"
-			},0
-		));
+		//영화 테이블 뷰
+		String MV_Name[] = {"영화번호", "영화제목", "개봉일","상영시간","평점","장르"};
+		DefaultTableModel MV_Model = new DefaultTableModel(MV_Name,0);
+		table = new JTable(MV_Model);
 		table.getColumnModel().getColumn(3).setPreferredWidth(81);
 		scrollPane.setViewportView(table);
 		
@@ -64,14 +62,10 @@ public class main_view extends JFrame {
 		scrollPane_1.setBounds(15, 222, 531, 140);
 		contentPane.add(scrollPane_1);
 		
-		table_1 = new JTable();
-		table_1.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\uBC30\uC6B0\uBC88\uD638", "\uC774\uB984", "\uCD9C\uC0DD\uC77C", "\uC131\uBCC4"
-			}
-		));
+		//배우테이블 뷰
+		String AC_Name[] = {"배우번호","이름","출생일","성별"};
+		DefaultTableModel AC_Model = new DefaultTableModel(AC_Name,0);
+		table_1 = new JTable(AC_Model);
 		scrollPane_1.setViewportView(table_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("\uBC30\uC6B0 \uC815\uBCF4");
@@ -82,21 +76,18 @@ public class main_view extends JFrame {
 		ac_change_button.setBounds(478, 191, 68, 27);
 		contentPane.add(ac_change_button);
 		
-		ac_change_button.addActionListener(new AC_button());
+		ac_change_button.addActionListener(new AC_button(table_1));
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(609, 222, 574, 140);
 		contentPane.add(scrollPane_2);
 		
-		table_2 = new JTable();
-		table_2.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\uAC10\uB3C5\uBC88\uD638", "\uC774\uB984", "\uCD9C\uC0DD\uC77C", "\uC131\uBCC4"
-			}
-		));
+		//감독 테이블 뷰
+		String DI_Name[] = {"감독번호","이름","출생일","성별"};
+		DefaultTableModel DI_Model = new DefaultTableModel(DI_Name,0);
+		table_2 = new JTable(DI_Model);
 		scrollPane_2.setViewportView(table_2);
+		
 		
 		JLabel lblNewLabel_2 = new JLabel("\uAC10\uB3C5\uC815\uBCF4");
 		lblNewLabel_2.setBounds(846, 195, 68, 19);
@@ -105,20 +96,16 @@ public class main_view extends JFrame {
 		JButton di_change_button = new JButton("변경");
 		di_change_button.setBounds(1115, 191, 68, 27);
 		contentPane.add(di_change_button);
-		di_change_button.addActionListener(new DI_button());
+		di_change_button.addActionListener(new DI_button(table_2));
 		
 		JScrollPane scrollPane_3 = new JScrollPane();
 		scrollPane_3.setBounds(15, 409, 531, 140);
 		contentPane.add(scrollPane_3);
 		
-		table_3 = new JTable();
-		table_3.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\uD68C\uC0AC\uBC88\uD638", "\uD68C\uC0AC\uC774\uB984", "\uC8FC\uC18C", "\uCC3D\uB9BD\uC77C", "\uC804\uD654\uBC88\uD638"
-			}
-		));
+		//제작사 뷰
+		String COM_Name[] = {"회사번호","회사이름","주소","창립일","전화번호"};
+		DefaultTableModel COM_Model = new DefaultTableModel(COM_Name,0);
+		table_3 = new JTable(COM_Model);
 		scrollPane_3.setViewportView(table_3);
 		
 		JLabel lblNewLabel_3 = new JLabel("\uC81C\uC791\uC0AC");
@@ -128,20 +115,15 @@ public class main_view extends JFrame {
 		JButton com_change_button = new JButton("변경");
 		com_change_button.setBounds(478, 376, 68, 27);
 		contentPane.add(com_change_button);
-		com_change_button.addActionListener(new COM_button());
+		com_change_button.addActionListener(new COM_button(table_3));
 		
 		JScrollPane scrollPane_4 = new JScrollPane();
 		scrollPane_4.setBounds(609, 409, 574, 140);
 		contentPane.add(scrollPane_4);
 		
-		table_4 = new JTable();
-		table_4.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\uBC30\uC6B0\uBC88\uD638", "\uC601\uD654\uBC88\uD638", "\uC5ED\uD560"
-			}
-		));
+		String MV_AC_Name[]= {"배우번호","영화번호","역할"};
+		DefaultTableModel MV_AC_Model = new DefaultTableModel(MV_AC_Name,0);
+		table_4 = new JTable(MV_AC_Model);
 		scrollPane_4.setViewportView(table_4);
 		
 		JLabel lblNewLabel_4 = new JLabel("\uC601\uD654\uBC30\uC6B0\uC815\uBCF4");
@@ -151,21 +133,17 @@ public class main_view extends JFrame {
 		JButton mv_ac_change_button = new JButton("변경");
 		mv_ac_change_button.setBounds(1115, 376, 68, 27);
 		contentPane.add(mv_ac_change_button);
-		mv_ac_change_button.addActionListener(new MV_AC_button());
+		mv_ac_change_button.addActionListener(new MV_AC_button(table_4));
 		
 		JScrollPane scrollPane_5 = new JScrollPane();
 		scrollPane_5.setBounds(15, 591, 531, 140);
 		contentPane.add(scrollPane_5);
-		 
-		table_5 = new JTable();
-		table_5.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\uAC10\uB3C5\uBC88\uD638", "\uC601\uD654\uBC88\uD638"
-			}
-		));
+		
+		String MV_DI_Name[] = {"감독번호","영화번호"};
+		DefaultTableModel MV_DI_Model = new DefaultTableModel(MV_DI_Name,0);
+		table_5 = new JTable(MV_DI_Model);
 		scrollPane_5.setViewportView(table_5);
+		
 		
 		JLabel lblNewLabel_5 = new JLabel("\uC601\uD654\uAC10\uB3C5");
 		lblNewLabel_5.setBounds(243, 563, 68, 19);
@@ -174,20 +152,16 @@ public class main_view extends JFrame {
 		JButton mv_di_change_button = new JButton("변경");
 		mv_di_change_button.setBounds(478, 559, 68, 27);
 		contentPane.add(mv_di_change_button);
-		mv_di_change_button.addActionListener(new MV_DI_button());
+		mv_di_change_button.addActionListener(new MV_DI_button(table_5));
 		
 		JScrollPane scrollPane_6 = new JScrollPane();
 		scrollPane_6.setBounds(609, 591, 574, 140);
 		contentPane.add(scrollPane_6);
 		
-		table_6 = new JTable();
-		table_6.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"\uC601\uD654\uBC88\uD638", "\uC81C\uC791\uC0AC\uBC88\uD638"
-			}
-		));
+		//영화제작사 뷰
+		String MV_COM_Name[] = {"영화번호","제작사번호"};
+		DefaultTableModel MV_COM_Model = new DefaultTableModel(MV_COM_Name,0);
+		table_6 = new JTable(MV_COM_Model);
 		scrollPane_6.setViewportView(table_6);
 		
 		JLabel lblNewLabel_6 = new JLabel("\uC601\uD654\uC81C\uC791\uC0AC");
@@ -197,7 +171,7 @@ public class main_view extends JFrame {
 		JButton mv_com_change_button = new JButton("변경");
 		mv_com_change_button.setBounds(1115, 559, 68, 27);
 		contentPane.add(mv_com_change_button);
-		mv_com_change_button.addActionListener(new MV_COM_button());
+		mv_com_change_button.addActionListener(new MV_COM_button(table_6));
 		
 		JScrollPane scrollPane_7 = new JScrollPane();
 		scrollPane_7.setBounds(15, 772, 400, 140);
@@ -273,22 +247,22 @@ public class main_view extends JFrame {
 		JButton ac_search_button = new JButton("검색");
 		ac_search_button.setBounds(15, 191, 68, 27);
 		contentPane.add(ac_search_button);
-		ac_search_button.addActionListener(new AC_button());
+		ac_search_button.addActionListener(new AC_button(table_1));
 		
 		JButton di_search_button = new JButton("검색");
 		di_search_button.setBounds(609, 191, 68, 27);
 		contentPane.add(di_search_button);
-		di_search_button.addActionListener(new DI_button());
+		di_search_button.addActionListener(new DI_button(table_2));
 		
 		JButton mv_ac_search_button = new JButton("검색");
 		mv_ac_search_button.setBounds(609, 372, 68, 27);
 		contentPane.add(mv_ac_search_button);
-		mv_ac_search_button.addActionListener(new MV_AC_button());
+		mv_ac_search_button.addActionListener(new MV_AC_button(table_4));
 		
 		JButton com_search_button = new JButton("검색");
 		com_search_button.setBounds(15, 372, 68, 27);
 		contentPane.add(com_search_button);
-		com_search_button.addActionListener(new COM_button());
+		com_search_button.addActionListener(new COM_button(table_3));
 		
 		JButton btnNewButton_14 = new JButton("m");
 		btnNewButton_14.setBounds(15, 735, 68, 27);
@@ -305,12 +279,12 @@ public class main_view extends JFrame {
 		JButton mv_com_search_button = new JButton("검색");
 		mv_com_search_button.setBounds(609, 559, 68, 27);
 		contentPane.add(mv_com_search_button);
-		mv_com_search_button.addActionListener(new MV_COM_button());
+		mv_com_search_button.addActionListener(new MV_COM_button(table_6));
 		
 		JButton mv_di_search_button = new JButton("검색");
 		mv_di_search_button.setBounds(15, 559, 68, 27);
 		contentPane.add(mv_di_search_button);
-		mv_di_search_button.addActionListener(new MV_DI_button());
+		mv_di_search_button.addActionListener(new MV_DI_button(table_5));
 
 	}
 }

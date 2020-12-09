@@ -12,7 +12,7 @@ public class DataBaseDAO {
 		try {
 			// DB 연결
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "movie", "1234");
 			} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("DB 연결실패" + e.toString());
