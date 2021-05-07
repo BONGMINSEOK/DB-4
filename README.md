@@ -12,4 +12,4 @@
 - 효율적인 데이터 관리를 위해서 Oracle Database 이용한 영화관리시스템을 구축
 
 3. 실행 방법
--Main.java 실행
+- Main.java 실행
