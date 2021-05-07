@@ -7,6 +7,9 @@
  - JDK 13 version
  - jdbc: C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib에서 ojdbc6 파일을 
  C:\Program/Files\Java\jdk1.8.0_181\jre\lib\ext 로 복사하였음
- 
-2. 실행 방법
-Main.java 실행
+
+2. 목적
+- 효율적인 데이터 관리를 위해서 Oracle Database 이용한 영화관리시스템을 구축
+
+3. 실행 방법
+-Main.java 실행
